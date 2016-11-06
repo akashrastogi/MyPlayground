@@ -52,5 +52,43 @@ if let value2 = optionalString
 
 var name:String? = "akash"
 print(name)
-print(name!)
+print(name!)// unwrap optional value
 
+
+// Functions
+func sum(a:Int, b:Int) ->(Int)
+{
+    return a+b
+}
+let x:Int = 10
+let y:Int = 20
+let result = sum(a: x, b: y);
+print("Sum of \(x) and \(y) is \(result)")
+
+func getName(title:String) -> (title:String, first:String, last:String)
+{
+    return (title, "akash", "rastogi")
+}
+let employee = getName(title: "Mr");
+print("Employee title is \(employee.title), first name is \(employee.first) and last name is \(employee.last)")
+
+//Variadic functions
+func printColours(colours: String...) ->()
+{
+    print("Printing colours-")
+    for colour in colours{
+        print(colour);
+    }
+}
+printColours(colours: "Red","Green","Blue")
+
+
+// Closures
+func processString(input: String, completionhandler: (String) -> Void) ->()
+{
+    let output = "Input= " + input + "\nOutput= putput string"
+    completionhandler(output)
+}
+processString(input: "input string") { (output) in
+    print(output);
+}
