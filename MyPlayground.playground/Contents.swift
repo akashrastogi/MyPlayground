@@ -10,7 +10,7 @@ enum RelationType {
     case Other
     
     init(){ // With default initialization
-        self = Friend
+        self = .Friend
     }
 }
 var relationType = RelationType()
@@ -49,4 +49,8 @@ if let value2 = optionalString
 {
     print(value2)
 }
+
+var name:String? = "akash"
+print(name)
+print(name!)
 
